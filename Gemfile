@@ -65,4 +65,5 @@ group :test do
   gem 'rspec-html-matchers'
   gem 'simplecov'
   gem 'simplecov-rcov'
+  gem 'rspec-query-limit'
 end

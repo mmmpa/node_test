@@ -284,6 +284,8 @@ GEM
     rspec-mocks (3.4.1)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.4.0)
+    rspec-query-limit (0.1.2)
+      rspec-rails
     rspec-rails (3.4.2)
       actionpack (>= 3.0, < 4.3)
       activesupport (>= 3.0, < 4.3)
@@ -414,6 +416,7 @@ DEPENDENCIES
   rails_best_practices
   rspec
   rspec-html-matchers
+  rspec-query-limit
   rspec-rails
   rubocop
   sass-rails (~> 5.0)

@@ -15,6 +15,7 @@ require 'simplecov-rcov'
 require "authlogic/test_case"
 include Authlogic::TestCase
 require 'pp'
+require 'rspec/query_limit'
 
 if ENV['CI']
   SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[Coveralls::SimpleCov::Formatter]

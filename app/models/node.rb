@@ -1,7 +1,6 @@
 class Node < ActiveRecord::Base
   belongs_to :owner
   belongs_to :parent, class_name: Node, foreign_key: :node_id
-  has_many :children, class_name: Node, foreign_key: :node_id
   has_many :nodes
 
   def leaf?
@@ -13,11 +12,9 @@ class Node < ActiveRecord::Base
   end
 
   def pick_leaves(picked = [])
-    if leaf?
-      return picked << self
-    end
+    return picked << self if leaf?
 
-    nodes.inject(picked) do |a, node|
+    nodes.includes(:nodes).inject(picked) do |a, node|
       node.pick_leaves(a)
     end
   end
